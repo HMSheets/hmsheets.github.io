@@ -1,0 +1,6 @@
+[submodule "hmsblog/themes/d3c3nt"]
+	path = hmsblog/themes/d3c3nt
+	url = git://git.figbert.com/d3c3nt.git
+[submodule "hmsblog/themes/themes/terminimal"]
+	path = hmsblog/themes/themes/terminimal
+	url = https://github.com/pawroman/zola-theme-terminimal.git
