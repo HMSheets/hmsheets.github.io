@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Blog :: HMSheets</title>
+    <subtitle>A place for a placeholder description.</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://www.hmsblog.com/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://www.hmsblog.com"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2019-10-28T00:00:00+00:00</updated>
+    <id>https://www.hmsblog.com/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Obligatory Hello World!</title>
+        <published>2019-10-28T00:00:00+00:00</published>
+        <updated>2019-10-28T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://www.hmsblog.com/helloworld/"/>
+        <id>https://www.hmsblog.com/helloworld/</id>
+        
+        <content type="html" xml:base="https://www.hmsblog.com/helloworld/">&lt;h1 id=&quot;obligatory-hello-world&quot;&gt;Obligatory Hello World!&lt;&#x2F;h1&gt;
+&lt;p&gt;With no previous blogging experience I venture into the darkness with this first of hopefully many posts.
+I have some ideas for a few posts and will be working on those over the next few weeks.
+Until then have a random xkcd comic
+-HMS&lt;&#x2F;p&gt;
+
+  &lt;figure class=&quot;center&quot; &gt;
+    &lt;img src=&quot;https:&#x2F;&#x2F;imgs.xkcd.com&#x2F;comics&#x2F;nowhere.png&quot; style=&quot;width: 100%;&quot; decoding=&quot;async&quot; loading=&quot;lazy&quot;&#x2F;&gt;
+    
+      &lt;figcaption class=&quot;left&quot; style=&quot;font-style: italic;&quot;&gt;&lt;p&gt;I mean, seriously, NOWHERE? For starters, there are like a thousand species of dinosaur. - https:&#x2F;&#x2F;xkcd.com&#x2F;650&#x2F;&lt;&#x2F;p&gt;
+&lt;&#x2F;figcaption&gt;
+    
+  &lt;&#x2F;figure&gt;
+
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Nebula - Not Your Everyday VPN</title>
+        <published>2019-10-28T00:00:00+00:00</published>
+        <updated>2019-10-28T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://www.hmsblog.com/nebula-mesh-vpn/"/>
+        <id>https://www.hmsblog.com/nebula-mesh-vpn/</id>
+        
+        <content type="html" xml:base="https://www.hmsblog.com/nebula-mesh-vpn/">&lt;h1 id=&quot;nebula-not-your-everyday-vpn&quot;&gt;Nebula - Not Your Everyday VPN&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;slackhq&#x2F;nebula&quot;&gt;Nebula&lt;&#x2F;a&gt; is a Mesh VPN that has recently been open sourced by Slack Technologies, the developers of the instant messaging service Slack.&lt;&#x2F;p&gt;
+&lt;p&gt;This is interesting for a number of reasons, one of which is Nebula was developed  by Slack to connect their infrastructure accross regions without the overhead of a traditional VPN solution.&lt;&#x2F;p&gt;
+&lt;p&gt;How is this relevant to us you might ask? Well instead of having devices connect directly to a centralized VPN server which handles all the connections, Nebula allows devices to connect directly to each other.&lt;&#x2F;p&gt;
+&lt;p&gt;Wait! How does it do that?!?! Well that is the cool part. All devices connected to a Nebula network contact a server called a Lighthouse. A Lighthouse is like a DNS server in that the devices on the network ask a Lighthouse where another device is and then with that information the querying device can find the best, most direct path to the queried device it is trying to connect with. That means if another Nebula connected device is on the same local network the two devices will talk to each other locally on that internal network at internal network speeds. No need to route the traffic over the WAN for it to come right back into the network! &lt;&#x2F;p&gt;
+&lt;p&gt;With my limited testing I was able to connect my laptop, a couple of VMs on my hypervisor at home, and two web servers I have hosted on DigitalOcean. This allowed me to administer my home servers and hypervisor on the same flat &lt;code&gt;&#x2F;24&lt;&#x2F;code&gt; network as my web servers in the cloud. That was mind blowing to me.&lt;&#x2F;p&gt;
+&lt;p&gt;Nebula will allow me to set up seamless backups, logging, and monitoring on my more powerful hypervisor at home for all my servers regardless of where they are. This is not to say I did not run into any hiccups.&lt;&#x2F;p&gt;
+&lt;p&gt;One hiccup I ran into is, like most VPNs, Nebula does not play well with a double NAT scenario. This is a problem for me because I live under someone else’s roof and have my entire network behind my own firewall inside of someone else’s network (you can find more info about double NAT &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;http:&#x2F;&#x2F;www.practicallynetworked.com&#x2F;networking&#x2F;fixing_double_nat.htm&quot;&gt;here&lt;&#x2F;a&gt; if your curious). &lt;&#x2F;p&gt;
+&lt;p&gt;Nebula does technically penetrate the double NAT. A device can punch through both firewalls direct to the lighthouse but routing from one device directly outside the double NAT to a device buried deep inside the double NAT, by default, does not work well. I have not touched any of the Nebula Routing rules and I am still testing and tweaking my configs so it might still be possible to route traffic through the lighthouse to allow the two separated devices to communicate through double NAT.&lt;&#x2F;p&gt;
+&lt;p&gt;Now that you have a primer on what Nebula is and why you might want to use it, you probably want to know how to set Nebula up. Below I will outline the steps I took to set up and test Nebula. This is not a comprehensive guide and I am pretty sure I didn’t configure encryption while testing (which I intend to play with still).&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;wget the latest release package for your platform from the &lt;a rel=&quot;noopener nofollow noreferrer&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;slackhq&#x2F;nebula&#x2F;releases&quot;&gt;GitHub Releases&lt;&#x2F;a&gt; page &lt;pre style=&quot;background-color:#1e1e1e;color:#dcdcdc;&quot;&gt;&lt;code&gt;&lt;span&gt;wget https:&#x2F;&#x2F;github.com&#x2F;slackhq&#x2F;nebula&#x2F;releases&#x2F;download&#x2F;v1.1.0&#x2F;nebula-linux-amd64.tar.gz
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Unpack the archive
+&lt;code&gt;tar -xf archive.tar.gz&lt;&#x2F;code&gt;
+&lt;ol&gt;
+&lt;li&gt;There should only be two files that get unpacked, &lt;code&gt;nebula&lt;&#x2F;code&gt; and &lt;code&gt;nebula-cert&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Move the nebula binary you unpacked to &lt;code&gt;&#x2F;usr&#x2F;local&#x2F;bin&#x2F;&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;If you do not have a CA created yet set one up with &lt;code&gt;.&#x2F;nebula-cert ca -name &amp;quot;Myorganization, Inc&amp;quot;&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Now that you have a CA created we can sign individual host keys with &lt;code&gt;.&#x2F;nebula-cert sign -name &amp;quot;hostname&amp;quot; -ip &amp;quot;192.168.100.1&#x2F;24&amp;quot; -groups &amp;quot;laptop,home,ssh&amp;quot;&lt;&#x2F;code&gt; and move it to &lt;code&gt;&#x2F;etc&#x2F;nebula&lt;&#x2F;code&gt;
+&lt;ol&gt;
+&lt;li&gt;Note: If you want to allow a node to route untrusted routes, you need to include the subnets of the untrusted routs in the cert &lt;code&gt;.&#x2F;nebula-cert sign -name &amp;quot;hostname&amp;quot; -ip &amp;quot;192.168.100.1&#x2F;24&amp;quot; -subnets &amp;quot;192.168.2.0&#x2F;24&amp;quot; -groups &amp;quot;laptop,home,ssh&amp;quot;&lt;&#x2F;code&gt; (I am still testing this and have yet to get it to work)&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Create a new config.yml from the &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;slackhq&#x2F;nebula&#x2F;tree&#x2F;master&#x2F;examples&quot;&gt;example config&lt;&#x2F;a&gt; in the nebula git repo. Modify as needed and move to &lt;code&gt;&#x2F;etc&#x2F;nebula&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Move &lt;code&gt;config.yml&lt;&#x2F;code&gt;, &lt;code&gt;ca.crt&lt;&#x2F;code&gt;, &lt;code&gt;{host}.crt&lt;&#x2F;code&gt;, and &lt;code&gt;{host}.key&lt;&#x2F;code&gt; to &lt;code&gt;&#x2F;etc&#x2F;nebula&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Next copy the &lt;code&gt;nebula.service&lt;&#x2F;code&gt; from the above example files and modify as needed then add it to &lt;code&gt;&#x2F;etc&#x2F;systemd&#x2F;system&#x2F;&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Enable and start the systemd service&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;Repeat these steps for each node on the mesh. There is a flag in the config and corresponding settings that determine if a node is a lighthouse or not. The config has plenty of helpful comments in this regard. If you are still stuck and need some guidance, reviewing the readme on the GitHub page might point you in the right direction.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;And that my friends are the basics of installing and setting up Nebula. Like I mentioned before there are a ton of settings I have yet to test and I did not cover how to set up the encryption between nodes.&lt;&#x2F;p&gt;
+&lt;p&gt;Overall I am very happy with Nebula so far and I look forward to learning some of its more advanced features.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>just a test</title>
+        <published>2002-10-28T00:00:00+00:00</published>
+        <updated>2002-10-28T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://www.hmsblog.com/test/"/>
+        <id>https://www.hmsblog.com/test/</id>
+        
+        <content type="html" xml:base="https://www.hmsblog.com/test/">&lt;h1 id=&quot;what-a-test&quot;&gt;What a test&lt;&#x2F;h1&gt;
+&lt;p&gt;such test much test&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>
