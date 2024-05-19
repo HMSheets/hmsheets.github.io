@@ -1,54 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://www.hmsblog.com/</loc>
+        <loc>https://hmsheets.github.io/</loc>
     </url>
     <url>
-        <loc>https://www.hmsblog.com/about/</loc>
+        <loc>https://hmsheets.github.io/about/</loc>
     </url>
     <url>
-        <loc>https://www.hmsblog.com/archive/</loc>
+        <loc>https://hmsheets.github.io/archive/</loc>
     </url>
     <url>
-        <loc>https://www.hmsblog.com/helloworld/</loc>
+        <loc>https://hmsheets.github.io/helloworld/</loc>
         <lastmod>2019-10-28</lastmod>
     </url>
     <url>
-        <loc>https://www.hmsblog.com/nebula-mesh-vpn/</loc>
+        <loc>https://hmsheets.github.io/nebula-mesh-vpn/</loc>
         <lastmod>2019-10-28</lastmod>
     </url>
     <url>
-        <loc>https://www.hmsblog.com/page/1/</loc>
+        <loc>https://hmsheets.github.io/page/1/</loc>
     </url>
     <url>
-        <loc>https://www.hmsblog.com/page/2/</loc>
+        <loc>https://hmsheets.github.io/page/2/</loc>
     </url>
     <url>
-        <loc>https://www.hmsblog.com/tags/</loc>
+        <loc>https://hmsheets.github.io/tags/</loc>
     </url>
     <url>
-        <loc>https://www.hmsblog.com/tags/general/</loc>
+        <loc>https://hmsheets.github.io/tags/general/</loc>
     </url>
     <url>
-        <loc>https://www.hmsblog.com/tags/nebula/</loc>
+        <loc>https://hmsheets.github.io/tags/nebula/</loc>
     </url>
     <url>
-        <loc>https://www.hmsblog.com/tags/networking/</loc>
+        <loc>https://hmsheets.github.io/tags/networking/</loc>
     </url>
     <url>
-        <loc>https://www.hmsblog.com/tags/safd/</loc>
+        <loc>https://hmsheets.github.io/tags/safd/</loc>
     </url>
     <url>
-        <loc>https://www.hmsblog.com/tags/test/</loc>
+        <loc>https://hmsheets.github.io/tags/test/</loc>
     </url>
     <url>
-        <loc>https://www.hmsblog.com/tags/testd/</loc>
+        <loc>https://hmsheets.github.io/tags/testd/</loc>
     </url>
     <url>
-        <loc>https://www.hmsblog.com/tags/vpn/</loc>
+        <loc>https://hmsheets.github.io/tags/vpn/</loc>
     </url>
     <url>
-        <loc>https://www.hmsblog.com/test/</loc>
+        <loc>https://hmsheets.github.io/test/</loc>
         <lastmod>2002-10-28</lastmod>
     </url>
 </urlset>

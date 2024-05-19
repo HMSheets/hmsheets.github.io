@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 Allow: /
-Sitemap: https://www.hmsblog.com/sitemap.xml
+Sitemap: https://hmsheets.github.io/sitemap.xml
