@@ -21,6 +21,13 @@
         <loc>https://hmsheets.github.io/page/1/</loc>
     </url>
     <url>
+        <loc>https://hmsheets.github.io/page/2/</loc>
+    </url>
+    <url>
+        <loc>https://hmsheets.github.io/shodan-safari-20200915/</loc>
+        <lastmod>2020-09-15</lastmod>
+    </url>
+    <url>
         <loc>https://hmsheets.github.io/tags/</loc>
     </url>
     <url>
@@ -31,6 +38,12 @@
     </url>
     <url>
         <loc>https://hmsheets.github.io/tags/networking/</loc>
+    </url>
+    <url>
+        <loc>https://hmsheets.github.io/tags/safari/</loc>
+    </url>
+    <url>
+        <loc>https://hmsheets.github.io/tags/shodan/</loc>
     </url>
     <url>
         <loc>https://hmsheets.github.io/tags/vpn/</loc>
